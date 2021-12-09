@@ -1,15 +1,14 @@
 <template>
-  <Home msg="나에게 어울리는 학과는?"/>
+  <div id="root">
+    <router-view/>
+  </div>
 </template>
 
 <script>
-import Home from "./views/Home";
 
 export default {
   name: 'App',
-  components: {
-    Home
-  }
+  components: {},
 }
 </script>
 
@@ -31,20 +30,19 @@ html {
   min-height: 1024px;
 }
 
-root, body {
+body {
   background-color: #EDF8FF;
   margin: 0;
   padding: 0;
-  height: 100vh;
   width: 100%;
 }
 
-#app {
+#root {
   font-family: NotoSansKR, sans-serif;
   text-align: center;
   font-weight: 700;
   color: #000000;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
