@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Home msg="나에게 어울리는 학과는?"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from "./views/Home";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Home
   }
 }
 </script>
 
 <style>
+@font-face {
+  font-family: 'NotoSansKR';
+  src: url('./assets/font/NotoSansKR-Bold.ttf') format('ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'NotoSansKR';
+  src: url('./assets/font/NotoSansKR-Medium.ttf') format('ttf');
+  font-weight: 400;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: NotoSansKR, sans-serif;
   text-align: center;
+  font-weight: 700;
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
