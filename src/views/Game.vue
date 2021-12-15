@@ -31,7 +31,7 @@ export default {
     },
     next() {
       const nextNumber = +this.$route.params.number + 1;
-      if (nextNumber === 11) return '/results';
+      if (nextNumber === 15) return '/results';
       return '/game/' + nextNumber;
     },
     getQuestion() {
