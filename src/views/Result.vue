@@ -22,7 +22,7 @@ import {results} from "@/constants/results";
 export default {
   name: "Result",
   computed: {
-    getResult() {
+    vuegetResult() {
       return results[0];
     }
   }

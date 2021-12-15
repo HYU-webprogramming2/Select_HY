@@ -13,13 +13,14 @@
 </template>
 
 <script>
+import {store} from '../store';
 export default {
   name: "Home",
   computed: {
     icon() {
       return require('../assets/svgs/hyrion.svg')
     }
-  }
+  },
 }
 </script>
 
