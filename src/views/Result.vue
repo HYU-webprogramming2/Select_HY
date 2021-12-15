@@ -18,13 +18,37 @@
 
 <script>
 import {results} from "@/constants/results";
+import {store} from "@/store/index";
 
 export default {
   name: "Result",
   computed: {
-    vuegetResult() {
-      return results[0];
+    getResult() {
+    //  const object = Object.values(store.state)
+    //  const max = Math.max(...object);
+      
+    //  for(const property in store.state) {
+    //    if(store.state[property]==max) {
+    //    console.log(results);
+    //      for(const p of results) {
+    //        console.log(p);
+    //        if(p.type == property) {
+    //          return p;
+    //        }
+    //      }
+    //    }
+    //  }
+    // }
+
+    getResult() {
+      const states = {…store.state};
+      let result = 'architecture';
+      Object.keys(states).forEach(r => {
+        result = states[r] > states[result] ? r : result;
+      });
+      return results.filter(r => r.name === result)[0];
     }
+
   }
 }
 </script>
