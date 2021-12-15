@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="sharing">
-      <img src="../assets/svgs/sharing.svg" width="350">
+      <img @click="sendKakao" src="../assets/svgs/sharing.svg" width="350">
     </div>
   </div>
 </template>
@@ -44,7 +44,25 @@ export default {
       });
       return results.filter(r => r.type === result)[0];
     }
-  }
+  }, methods: {
+    sendKakao: () => {
+      console.log("??")
+      window.Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '나에게 어울리는 하냥 학과는??',
+          imageUrl:
+              'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+          description: '내 미래 하냥 학과는 어디일까요?',
+          link: {mobileWebUrl: 'http://naver.com', webUrl: 'http://naver.com',},
+        },
+        buttons: [{
+          title: '웹으로 보기',
+          link: {mobileWebUrl: 'http://naver.com', webUrl: 'http://naver.com',},
+        },],
+      })
+    }
+  },
 }
 </script>
 
