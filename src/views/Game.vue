@@ -2,17 +2,17 @@
   <div class="container">
     <div class="question">
       <div style="color: #004B86">Q. {{ $route.params.number }}</div>
-      <div>{{getQuestion.quest}}</div>
+      <div>{{ getQuestion.quest }}</div>
     </div>
     <div class="selection">
-      <router-link :to="next">
-        <img :src="getQuestion.firstImage" width="600"/>
-        <div>{{getQuestion.firstAnswer}}</div>
-      </router-link>
-      <router-link :to="next">
-        <img :src="getQuestion.secondImage" width="600"/>
-        <div>{{getQuestion.secondAnswer}}</div>
-      </router-link>
+      <img :src="getQuestion.image" width="160"/>
+      <div class="answers">
+        <div v-for="item in getQuestion.answers" :key="item.number">
+          <router-link :to="next">
+            <div class="answer">{{ item }}</div>
+          </router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,10 +24,10 @@ export default {
   name: "Game",
   computed: {
     firstImg() {
-      return require('../assets/imgs/1.png')
+      return require('../assets/imgs/1.png');
     },
     secondImg() {
-      return require('../assets/imgs/1.png')
+      return require('../assets/imgs/1.png');
     },
     next() {
       const nextNumber = +this.$route.params.number + 1;
@@ -42,6 +42,16 @@ export default {
 </script>
 
 <style scoped>
+.answer {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 10px;
+  width: 1100px;
+  font-size: 26px;
+  border-radius: 50px;
+}
+
 .question {
   display: flex;
   flex-direction: column;
@@ -53,8 +63,14 @@ export default {
   margin: 10px;
 }
 
+.selection > img {
+  margin-bottom: 50px;
+}
+
 .selection {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
   margin: 0 400px;
 }
@@ -63,14 +79,20 @@ export default {
   font-size: 36px;
   font-weight: 400;
 }
-.selection > a {
+
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.answers > div > a {
   font-size: 36px;
   font-weight: 400;
   color: #000000;
   text-decoration: none;
 }
 
-.selection > div:hover {
+.answers > div:hover {
   cursor: pointer;
   transition: all 1s;
   transform: scale(1.1);
