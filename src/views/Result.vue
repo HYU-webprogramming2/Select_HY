@@ -1,14 +1,14 @@
 <template>
   <div class="box">
     <div>
-    </div>
-    <div>
       <div class="result">
         <div style="color: #004B86">결과</div>
         <div>{{ getResult.department }}</div>
       </div>
-      <img :src="getResult.image" width="400"/>
-      <div class="explain" v-for="item in getResult.explain" :key="item">{{ item }}</div>
+      <img :src="getResult.image" width="250"/>
+      <div class="explainbox">
+        <div class="explain" v-for="item in getResult.explain" :key="item">{{ item }}</div>
+      </div>
     </div>
     <div class="sharing">
       <img src="../assets/svgs/sharing.svg" width="350">
@@ -31,13 +31,17 @@ export default {
 
 <style scoped>
 .box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row-reverse;
   height: 100%;
 }
 
+.box > div {
+  margin: auto;
+}
+
 .result {
-  font-size: 48px;
+  font-size: 38px;
   margin: 80px auto;
 }
 
@@ -45,18 +49,26 @@ export default {
   margin: 20px;
 }
 
+.explainbox {
+  background-color: #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 30px;
+  padding: 20px 30px;
+}
+
 .explain {
-  max-width: 512px;
+  max-width: 750px;
   font-size: 20px;
   font-weight: 400;
   text-align: left;
   margin: auto;
+  line-height: 30px;
 }
 
 .sharing {
-  display: flex;
-  flex-direction: column-reverse;
-  padding-bottom: 80px;
+  position: absolute;
+  bottom: 40px;
+  right: 70px;
 }
 
 .sharing > img:hover {
@@ -66,6 +78,6 @@ export default {
 }
 
 img {
-  margin: 50px 0;
+  margin: 20px 0;
 }
 </style>

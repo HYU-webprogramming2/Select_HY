@@ -19,7 +19,7 @@
 
 <script>
 import {questions} from "@/constants/questions";
-import {store, increment} from "@/store";
+import {store} from "@/store";
 
 export default {
   name: "Game",
