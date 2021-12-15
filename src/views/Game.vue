@@ -24,10 +24,10 @@ export default {
   name: "Game",
   computed: {
     firstImg() {
-      return require('../assets/imgs/sample.png')
+      return require('../assets/imgs/1.png')
     },
     secondImg() {
-      return require('../assets/imgs/sample.png')
+      return require('../assets/imgs/1.png')
     },
     next() {
       const nextNumber = +this.$route.params.number + 1;

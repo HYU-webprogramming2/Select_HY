@@ -11,7 +11,7 @@
       <div class="explain" v-for="item in getResult.explain" :key="item">{{ item }}</div>
     </div>
     <div class="sharing">
-      <img src="../assets/imgs/sharing.svg" width="350">
+      <img src="../assets/svgs/sharing.svg" width="350">
     </div>
   </div>
 </template>
