@@ -9,7 +9,7 @@
       <div class="answers">
         <div v-for="(item) in getQuestion.answers" :key="item.number">
           <router-link :to="next">
-            <div v-on:click="onClick" class="answer">{{ item.contents }}</div>
+            <div v-on:click="onClick(item)" class="answer">{{ item.contents }}</div>
           </router-link>
         </div>
       </div>
@@ -19,6 +19,7 @@
 
 <script>
 import {questions} from "@/constants/questions";
+import {store, increment} from "@/store";
 
 export default {
   name: "Game",
@@ -39,8 +40,8 @@ export default {
     }
   },
   methods: {
-    onClick: () => {
-
+    onClick: (item) => {
+      item.value.forEach((val) => store.commit('increment', val));
     },
   },
 };
