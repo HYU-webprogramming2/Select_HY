@@ -25,11 +25,6 @@ export default {
   font-weight: 400;
 }
 
-html {
-  min-width: 1440px;
-  min-height: 1024px;
-}
-
 body {
   background-color: #EDF8FF;
   margin: 0;
@@ -42,7 +37,6 @@ body {
   text-align: center;
   font-weight: 700;
   color: #000000;
-  height: 100vh;
   width: 100%;
 }
 

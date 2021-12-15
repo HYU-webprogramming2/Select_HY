@@ -5,7 +5,7 @@
       <div>{{ getQuestion.quest }}</div>
     </div>
     <div class="selection">
-      <img :src="getQuestion.image" width="160"/>
+      <img :src="getQuestion.image" width="120"/>
       <div class="answers">
         <div v-for="item in getQuestion.answers" :key="item.number">
           <router-link :to="next">
@@ -45,21 +45,21 @@ export default {
 .answer {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-color: #ffffff;
-  padding: 20px;
+  padding: 15px;
   margin: 10px;
-  width: 1100px;
-  font-size: 26px;
+  width: 800px;
+  font-size: 18px;
   border-radius: 50px;
 }
 
 .question {
   display: flex;
   flex-direction: column;
-  margin: 70px auto;
+  margin: 40px auto;
 }
 
 .question > div {
-  font-size: 48px;
+  font-size: 24px;
   margin: 10px;
 }
 
