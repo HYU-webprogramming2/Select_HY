@@ -69,7 +69,7 @@ export default {
 <style scoped>
 .box {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -116,5 +116,50 @@ export default {
 
 img {
   margin: 20px 0;
+}
+
+@media only screen and (max-width: 1151px) {
+  .box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .result {
+    font-size: 18px;
+    margin: 30px auto 10px auto;
+  }
+
+  .result > div {
+    margin: 10px;
+  }
+
+  .explainbox {
+    background-color: #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 30px;
+    padding: 15px;
+  }
+
+  .explain {
+    max-width: 300px;
+    font-size: 16px;
+    margin: auto;
+    line-height: 30px;
+  }
+
+  .sharing {
+    position: inherit;
+  }
+
+  .sharing > img {
+    margin: 10px 0;
+    width: 200px;
+    height: 150px;
+  }
+
+  img {
+    width: 200px;
+  }
 }
 </style>

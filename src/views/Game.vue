@@ -103,4 +103,45 @@ export default {
   transition: all 1s;
   transform: scale(1.1);
 }
+
+@media only screen and (max-width: 1151px) {
+  .answer {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    font-size: 18px;
+    border-radius: 50px;
+  }
+
+  .question {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+  }
+
+  .question > div {
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  .selection > img {
+    width: 100px;
+    margin-bottom: 30px;
+  }
+
+  .selection {
+    margin: auto;
+  }
+
+  .selection > div {
+    font-size: 24px;
+  }
+
+  .answers > div > a {
+    font-size: 24px;
+  }
+
+}
 </style>

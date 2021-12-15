@@ -66,4 +66,36 @@ button:hover {
   transform: scale(1.1);
 }
 
+@media only screen and (max-width: 1151px) {
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #004B86;
+    width: fit-content;
+    margin-bottom: 5px;
+  }
+
+  div {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 10px auto auto;
+  }
+
+  img {
+    margin: auto;
+    width: 300px;
+    height: 300px;
+  }
+
+  button {
+    background-color: #0069AA;
+    box-shadow: 0 10px 11px rgba(146, 207, 244, 0.5);
+    border-radius: 39px;
+    padding: 10px 54px;
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
 </style>
