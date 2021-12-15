@@ -18,7 +18,7 @@
 
 <script>
 import {results} from "@/constants/results";
-import {store} from "@/store/index";
+import {store} from "@/store";
 
 export default {
   name: "Result",
@@ -46,19 +46,18 @@ export default {
     }
   }, methods: {
     sendKakao: () => {
-      console.log("??")
       window.Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
           title: '나에게 어울리는 하냥 학과는??',
           imageUrl:
-              'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+              'https://dionysos-winecellar.s3.us-east-2.amazonaws.com/static/hyrion.svg',
           description: '내 미래 하냥 학과는 어디일까요?',
-          link: {mobileWebUrl: 'http://naver.com', webUrl: 'http://naver.com',},
+          link: {mobileWebUrl: 'http://hanyang.ml', webUrl: 'http://hanyang.ml',},
         },
         buttons: [{
           title: '웹으로 보기',
-          link: {mobileWebUrl: 'http://naver.com', webUrl: 'http://naver.com',},
+          link: {mobileWebUrl: 'http://hanyang.ml', webUrl: 'http://hanyang.ml',},
         },],
       })
     }
