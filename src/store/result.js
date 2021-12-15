@@ -16,7 +16,3 @@ export const resultState = {
     music: 0,
     physical: 0,
 }
-
-// const mutations = {
-//
-// }

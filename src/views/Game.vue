@@ -7,9 +7,9 @@
     <div class="selection">
       <img :src="getQuestion.image" width="120"/>
       <div class="answers">
-        <div v-for="item in getQuestion.answers" :key="item.number">
+        <div v-for="(item) in getQuestion.answers" :key="item.number">
           <router-link :to="next">
-            <div class="answer">{{ item }}</div>
+            <div v-on:click="onClick" class="answer">{{ item.contents }}</div>
           </router-link>
         </div>
       </div>
@@ -37,7 +37,12 @@ export default {
     getQuestion() {
       return questions.find(question => question.number === +this.$route.params.number);
     }
-  }
+  },
+  methods: {
+    onClick: () => {
+
+    },
+  },
 };
 </script>
 
